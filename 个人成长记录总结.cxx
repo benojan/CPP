@@ -26,4 +26,8 @@ printf("中文");
 ------------------
 1.wchar_t 的输出!
 2.使用cout/wcout输出utf-8!
+  char ch1 = 't';
+  wchar_t ch2 = L'\x4F60'; // 最好用unicode编码的十六进制表示汉字！
+  cout << hex << (int) ch1 << " " << ch2 << endl; //output:74 4f60------即输出成功
+  wcout << hex << (int) ch1 << L" " << ch2 << endl; //output:74---------前面输出成功，后面输出失败
 
