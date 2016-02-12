@@ -1,4 +1,4 @@
-//-------------------------------
+//===============================================
 //Linux Mint平台
 //g++版本4.8.4可用，查看g++版本命令：g++ --version
 
@@ -42,7 +42,7 @@ int main()
 	wcout << hex << (int) ch1 << L' ' << (int) ch2 << endl; //十六进制输出
 }
 
-//---------------------------------------
+//===============================================
 //Windows平台下部分编译器支持
 //win10下，使用VS2015
 
@@ -96,12 +96,15 @@ int main()
 	out.close();
 	system("pause");
 }
-//-----------------------------------------
+
+
+//===============================================
 //参考资料：
 http://blog.csdn.net/haiross/article/details/45074355 [C++中的locale设置（即系统区域设置）]
 http://blog.csdn.net/wallaceli1981/article/details/6116738 [C++ 标准库的 locale 类用法]
 https://gcc.gnu.org/onlinedocs/libstdc++/manual/localization.html [libstd c++ localization章节]
 
+//-----------------------
 确定一个locale,需要采用以下字符串格式：
 language[_area[.code]]
 下面列出了典型的语言名称：
