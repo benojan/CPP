@@ -4,7 +4,9 @@ using namespace std;
  
 int main()
 {
-	setlocale(LC_ALL,"zh_CN.UTF-8"); //linux下缺箇条
+	locale loc("zh_CN.UTF-8"); //linux下配置utf-8
+	locale::global(loc);
+	//setlocale(LC_ALL,"zh_CN.UTF-8"); //c语言配置方式
 	// 最好用unicode编码个十六进制表示汉字！
 	wstring ws = L"快活险"; //\x5FEB\x6D3B\x9669
 	wcout << ws[0] << endl;
