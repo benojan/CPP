@@ -59,6 +59,17 @@ ja_JP.EUC   Japanese in Japan with Extended UNIX Code encoding
 ko_KR       Korean in Korea
 zh_CN       Chinese in China
 zh_TW       Chinese in Taiwan
+//----------------
+zh_CN
+zh_CN.gb18030
+zh_CN.gbk
+zh_CN.utf8
+zh_HK
+zh_HK.utf8
+zh_TW
+zh_TW.euctw
+zh_TW.utf8
+//----------------
 lt_LN.bit7  ISO Latin, 7 bit
 lt_LN.bit8  ISO Latin, 8 bit
 POSIX       POSIX conventions (English, 7 bit)
