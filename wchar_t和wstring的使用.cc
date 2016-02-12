@@ -44,7 +44,6 @@ int main()
 
 //---------------------------------------
 //Windows10下，使用VS2015
-//可以输出到文件，为utf-8格式
 
 #include <iostream>
 #include <locale>
@@ -55,7 +54,7 @@ int main()
 {
 	locale loc(""); //windows下设置区域为默认的locale，即chs
 	//locale loc("chs") //上一行或此行
-	wcout.imbue(loc);//locale::global(loc);
+	wcout.imbue(loc);
 	// 最好用unicode编码个十六进制表示汉字！
 	wstring ws = L"快活险"; //\x5FEB\x6D3B\x9669
 	wcout << ws[0] << endl;
@@ -79,7 +78,23 @@ int main()
 	wcout << hex << (int)ch1 << L' ' << (int)ch2 << endl; //十六进制输出
 	system("pause");
 }
+//可以输出到文件，为utf-8格式
+#include <iostream>
+#include <fstream>
+#include <locale>
+using namespace std;
 
+int main()
+{
+	wstring ws = L"快活险"; //\x5FEB\x6D3B\x9669
+	wofstream out(L"你好.txt");
+	locale loc(""); //输出前同样要设置
+	out.imbue(loc);
+	out << ws << endl;
+	out.close();
+	system("pause");
+}
+//-----------------------------------------
 //参考资料：
 http://blog.csdn.net/haiross/article/details/45074355 [C++中的locale设置（即系统区域设置）]
 http://blog.csdn.net/wallaceli1981/article/details/6116738 [C++ 标准库的 locale 类用法]
