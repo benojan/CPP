@@ -1,3 +1,7 @@
+//-------------------------------
+//Linux Mint平台
+//g++版本4.8.4可用，查看g++版本命令：g++ --version
+
 #include <iostream>
 #include <locale>
 using namespace std;
@@ -8,10 +12,10 @@ using namespace std;
 
 int main()
 {
-	locale loc("zh_CN.UTF-8"); //linux下配置utf-8，默认是c。//g++版本4.8.4可用， 查看g++版本命令： g++ --version
+	locale loc("zh_CN.UTF-8"); //linux下配置utf-8，默认是c。
 	locale::global(loc);
 	//---------------------------
-	locale loc(""); //windows下，使用VS2015。不能
+	locale loc(""); //windows下，使用VS2015。
 	//locale loc("chs") //上一行或此行
 	wcout.imbue(loc);
 	//---------------------------
@@ -36,6 +40,43 @@ int main()
 	wchar_t ch2 = L'尔'; //\x5C14
 	wcout << (int) ch1 << endl; //十进制输出
 	wcout << hex << (int) ch1 << L' ' << (int) ch2 << endl; //十六进制输出
+}
+
+//---------------------------------------
+//Windows10下，使用VS2015
+
+#include <iostream>
+#include <locale>
+#include <clocale>
+using namespace std;
+
+int main()
+{
+	locale loc(""); //windows下设置区域为默认的locale，即chs
+	//locale loc("chs") //上一行或此行
+	wcout.imbue(loc);//locale::global(loc);
+	// 最好用unicode编码个十六进制表示汉字！
+	wstring ws = L"快活险"; //\x5FEB\x6D3B\x9669
+	wcout << ws[0] << endl;
+	wcout << ws << endl;
+	wcout << ws.length() << endl;
+
+	wchar_t wc[4] = L"尔好兮"; //\x5C14\x597D\x516E
+	wcout << wc[0] << endl;
+	wcout << wc << endl;
+	wcout << wcslen(wc) << endl;
+	//C函数：
+	setlocale(LC_ALL,""); //双配置，c语言的配置方式
+	setlocale(LC_ALL,"chs"); //上一行或此行
+	wprintf(L"%c\n", wc[0]);
+	wprintf(L"%ls\n", wc);
+	wprintf(L"%d\n", wcslen(wc));
+	//十六进制输出：
+	char ch1 = 'A';
+	wchar_t ch2 = L'尔'; //\x5C14
+	wcout << (int)ch1 << endl; //十进制输出
+	wcout << hex << (int)ch1 << L' ' << (int)ch2 << endl; //十六进制输出
+	system("pause");
 }
 
 //参考资料：
