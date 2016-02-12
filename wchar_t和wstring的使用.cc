@@ -55,6 +55,7 @@ int main()
 	locale loc(""); //windows下设置区域为默认的locale，即chs
 	//locale loc("chs") //上一行或此行
 	wcout.imbue(loc);
+	locale::global(loc); //重定向到文件能输出，命令行下只显示c语言的部分。重定向的方法：命令行下程序名后加【>> a.txt】
 	// 最好用unicode编码个十六进制表示汉字！
 	wstring ws = L"快活险"; //\x5FEB\x6D3B\x9669
 	wcout << ws[0] << endl;
@@ -67,7 +68,7 @@ int main()
 	wcout << wcslen(wc) << endl;
 	//C函数：
 	setlocale(LC_ALL,""); //双配置，c语言的配置方式
-	setlocale(LC_ALL,"chs"); //上一行或此行
+	//setlocale(LC_ALL,"chs"); //上一行或此行
 	wprintf(L"%c\n", wc[0]);
 	wprintf(L"%ls\n", wc);
 	wprintf(L"%d\n", wcslen(wc));
