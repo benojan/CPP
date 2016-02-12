@@ -12,7 +12,8 @@ using namespace std;
 
 int main()
 {
-	locale loc("zh_CN.UTF-8"); //linux下配置utf-8，默认是c。
+	locale loc(""); //linux下配置utf-8
+	//locale loc("zh_CN.UTF-8"); //作用同上一行
 	locale::global(loc);
 	
 	//setlocale(LC_ALL,"zh_CN.UTF-8"); //c语言配置方式
