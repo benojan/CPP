@@ -44,6 +44,7 @@ int main()
 
 //---------------------------------------
 //Windows10下，使用VS2015
+//可以输出到文件，为utf-8格式
 
 #include <iostream>
 #include <locale>
