@@ -10,6 +10,12 @@ int main()
 {
 	locale loc("zh_CN.UTF-8"); //linux下配置utf-8，默认是c。//g++版本4.8.4可用， 查看g++版本命令： g++ --version
 	locale::global(loc);
+	//---------------------------
+	locale loc(""); //windows下，使用VS2015。不能
+	//locale loc("chs") //上一行或此行
+	wcout.imbue(loc);
+	//---------------------------
+	
 	//setlocale(LC_ALL,"zh_CN.UTF-8"); //c语言配置方式
 	// 最好用unicode编码个十六进制表示汉字！
 	wstring ws = L"快活险"; //\x5FEB\x6D3B\x9669
@@ -21,7 +27,7 @@ int main()
 	wcout << wc[0] << endl;
 	wcout << wc << endl;
 	wcout << wcslen(wc) << endl;
-	//C函数：
+	//C函数：vs2015，设置locale后不能显示！默认可以显示！！
 	wprintf(L"%lc\n", wc[0] );
 	wprintf(L"%ls\n", wc );
 	wprintf(L"%d\n", wcslen(wc) );
