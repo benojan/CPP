@@ -43,7 +43,8 @@ int main()
 }
 
 //---------------------------------------
-//Windows10下，使用VS2015
+//Windows平台下部分编译器支持
+//win10下，使用VS2015
 
 #include <iostream>
 #include <locale>
