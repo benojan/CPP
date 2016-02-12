@@ -4,7 +4,7 @@ using namespace std;
  
 int main()
 {
-	setlocale(LC_ALL,"zh_CN.UTF-8"); //必须要有
+	setlocale(LC_ALL,"zh_CN.UTF-8"); //便约要
 	wstring ws = L"快活险";
 	wcout << ws[0] << endl;
 	wcout << ws << endl;
