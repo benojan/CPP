@@ -137,3 +137,19 @@ lt_LN.bit7  ISO Latin, 7 bit
 lt_LN.bit8  ISO Latin, 8 bit
 POSIX       POSIX conventions (English, 7 bit)
 但它们尚未标准化。
+
+
+//===============================================
+locale::category 常量与 setlocale() 中的 category 参数对应关系
+//-------------------
+
+locale::category 常量         setlocale() 中的 category
+//------------------------------------------------------
+all                           LC_ALL
+collate                       LC_COLLATE
+ctype                         LC_CTYPE
+messages                      LC_MESSAGES
+monetary                      LC_MONETARY
+none                          表示所有 category 的空集（LC_ALL 的补集）
+numeric                       LC_NUMERIC
+time                          LC_TIME
