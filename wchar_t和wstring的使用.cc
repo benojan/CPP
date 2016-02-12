@@ -4,7 +4,7 @@ using namespace std;
  
 int main()
 {
-	locale loc("zh_CN.UTF-8"); //linux下配置utf-8，默认是c。//g++版本4.8.4可用
+	locale loc("zh_CN.UTF-8"); //linux下配置utf-8，默认是c。//g++版本4.8.4可用， 查看g++版本命令： g++ --version
 	locale::global(loc);
 	//setlocale(LC_ALL,"zh_CN.UTF-8"); //c语言配置方式
 	// 最好用unicode编码个十六进制表示汉字！
