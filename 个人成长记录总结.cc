@@ -25,6 +25,7 @@ printf("中文");
 待解决问题：
 ------------------
 1.wchar_t 的输出!
+  详见wchar_t和wstring的使用.cc
 2.使用cout/wcout输出utf-8!
   char ch1 = 't';
   wchar_t ch2 = L'\x4F60'; // 最好用unicode编码的十六进制表示汉字！
