@@ -14,11 +14,6 @@ int main()
 {
 	locale loc("zh_CN.UTF-8"); //linux下配置utf-8，默认是c。
 	locale::global(loc);
-	//---------------------------
-	locale loc(""); //windows下，使用VS2015。
-	//locale loc("chs") //上一行或此行
-	wcout.imbue(loc);
-	//---------------------------
 	
 	//setlocale(LC_ALL,"zh_CN.UTF-8"); //c语言配置方式
 	// 最好用unicode编码个十六进制表示汉字！
@@ -31,10 +26,11 @@ int main()
 	wcout << wc[0] << endl;
 	wcout << wc << endl;
 	wcout << wcslen(wc) << endl;
-	//C函数：vs2015，设置locale后不能显示！默认可以显示！！
+	
 	wprintf(L"%lc\n", wc[0] );
 	wprintf(L"%ls\n", wc );
 	wprintf(L"%d\n", wcslen(wc) );
+	
 	//十六进制输出：
 	char ch1 = 'A';
 	wchar_t ch2 = L'尔'; //\x5C14
@@ -44,6 +40,8 @@ int main()
 
 //===============================================
 //Windows平台下部分编译器支持
+
+//---------------
 //win10下，使用VS2015
 
 #include <iostream>
@@ -55,8 +53,11 @@ int main()
 {
 	locale loc(""); //windows下设置区域为默认的locale，即chs
 	//locale loc("chs") //上一行或此行
+	
 	wcout.imbue(loc);
-	locale::global(loc); //重定向到文件能输出，命令行下只显示c语言的部分。重定向的方法：命令行下程序名后加【>> a.txt】
+	//locale::global(loc); //若上一行换成此行：重定向到文件能输出，命令行下只显示c语言的部分。
+	                       //重定向的方法：命令行下程序名后加【>> a.txt】
+	
 	// 最好用unicode编码个十六进制表示汉字！
 	wstring ws = L"快活险"; //\x5FEB\x6D3B\x9669
 	wcout << ws[0] << endl;
@@ -67,20 +68,25 @@ int main()
 	wcout << wc[0] << endl;
 	wcout << wc << endl;
 	wcout << wcslen(wc) << endl;
-	//C函数：
-	setlocale(LC_ALL,""); //双配置，c语言的配置方式
+	
+	//使用C语言函数wprintf：
+	setlocale(LC_ALL,""); //配置后让wprintf正常工作，即c语言的配置方式
 	//setlocale(LC_ALL,"chs"); //上一行或此行
 	wprintf(L"%c\n", wc[0]);
 	wprintf(L"%ls\n", wc);
 	wprintf(L"%d\n", wcslen(wc));
+	
 	//十六进制输出：
 	char ch1 = 'A';
 	wchar_t ch2 = L'尔'; //\x5C14
 	wcout << (int)ch1 << endl; //十进制输出
 	wcout << hex << (int)ch1 << L' ' << (int)ch2 << endl; //十六进制输出
+	
 	system("pause");
 }
+//---------------
 //可以输出到文件，为utf-8格式
+
 #include <iostream>
 #include <fstream>
 #include <locale>
@@ -90,10 +96,13 @@ int main()
 {
 	wstring ws = L"快活险"; //\x5FEB\x6D3B\x9669
 	wofstream out(L"你好.txt");
+	
 	locale loc(""); //输出前同样要设置
 	out.imbue(loc);
+	
 	out << ws << endl;
 	out.close();
+	
 	system("pause");
 }
 
