@@ -4,7 +4,8 @@ using namespace std;
  
 int main()
 {
-	setlocale(LC_ALL,"zh_CN.UTF-8"); //必须要有
+	setlocale(LC_ALL,"zh_CN.UTF-8"); //linux下缺箇条
+	// 最好用unicode编码个十六进制表示汉字！
 	wstring ws = L"快活险"; //\x5FEB\x6D3B\x9669
 	wcout << ws[0] << endl;
 	wcout << ws << endl;
@@ -20,7 +21,7 @@ int main()
 	wprintf(L"%d\n", wcslen(wc) );
 	//十六进制输出：
 	char ch1 = 'A';
-	wchar_t ch2 = L'尔'; // 最好用unicode编码的十六进制\x5C14表示汉字！
+	wchar_t ch2 = L'尔'; //\x5C14
 	wcout << (int) ch1 << endl; //十进制输出
 	wcout << hex << (int) ch1 << L' ' << (int) ch2 << endl; //十六进制输出
 }
