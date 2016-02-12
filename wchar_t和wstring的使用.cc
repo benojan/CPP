@@ -2,6 +2,10 @@
 #include <locale>
 using namespace std;
  
+//locale::classic() //获取经典的C的locale，相当于local("C");
+//locale loc(""); //从环境变量LANG中读取默认的locale对象
+//locale::global(loc) //安装全局locale对象，相当于C语言的locale调用了std::setlocale(LC_ALL,"XXX");
+
 int main()
 {
 	locale loc("zh_CN.UTF-8"); //linux下配置utf-8，默认是c。//g++版本4.8.4可用， 查看g++版本命令： g++ --version
@@ -59,7 +63,3 @@ lt_LN.bit7  ISO Latin, 7 bit
 lt_LN.bit8  ISO Latin, 8 bit
 POSIX       POSIX conventions (English, 7 bit)
 但它们尚未标准化。
-
-locale::classic() //获取经典的C的locale，相当于local("C");
-locale loc(""); //从环境变量LANG中读取默认的locale对象
-locale::global(loc) //安装全局locale对象，相当于C语言的locale调用了std::setlocale(LC_ALL,"XXX");
