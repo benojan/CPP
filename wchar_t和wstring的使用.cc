@@ -3,7 +3,7 @@
 //g++版本4.8.4可用，查看g++版本命令：g++ --version
 
 #include <iostream>
-#include <locale>
+//#include <locale> //无需包含?
 using namespace std;
  
 //locale::classic() //获取经典的C的locale，相当于local("C");
