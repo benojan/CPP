@@ -5,3 +5,5 @@
 Read.cc是主程序
 
 split.cc是分割处理函数
+
+words.txt是数据库模板
