@@ -18,6 +18,9 @@ int main()
 	
 	//setlocale(LC_ALL,"zh_CN.UTF-8"); //c语言配置方式
 	// 最好用unicode编码个十六进制表示汉字！
+	string s = "讲弗着";
+	wcout << s.c_str() << endl; //string这样输出！
+	
 	wstring ws = L"快活险"; //\x5FEB\x6D3B\x9669
 	wcout << ws[0] << endl;
 	wcout << ws << endl;
