@@ -18,5 +18,4 @@ int main()
     cout << c << endl;
 
     // getline(cin, str); // 第一个参数是istream，第二个参数是string。一般用这个读取行比较好，这个是什么字符流？
-
 }
