@@ -1,6 +1,6 @@
 /**
 * 该代码适用于windows平台下
-* VS 2019
+* Visual Studio 2019
 * C++11以上
 */
 
