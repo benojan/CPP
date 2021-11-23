@@ -1,5 +1,6 @@
 /**
 * 该代码适用于windows平台下
+* C++11以上
 */
 
 #include <iostream>
