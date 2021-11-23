@@ -22,15 +22,21 @@ void Utf8ToGbk()
     wstring_convert<codecvt_utf8<wchar_t>> conv;
     wstring unicode = conv.from_bytes(utf8code);
 
+    //=============================
+    // 方式一：
     // 转换成gbk
     // linux下 "zh_CN.GBK"
     // windows下 ".936"
     auto codecvt_gbk = new codecvt_byname<wchar_t, char, mbstate_t>(".936");
     wstring_convert<codecvt_byname<wchar_t, char, mbstate_t>> gbk(codecvt_gbk);
     string gbkcode = gbk.to_bytes(unicode);
-
     // 输出gbk
     cout << gbkcode << endl;
+
+    //=============================
+    // 方式二：输出gbk
+    wcout.imbue(locale(""));
+    wcout << unicode << endl;
 }
 
 // gbk => utf8
@@ -49,12 +55,20 @@ void GbkToUtf8()
     wstring_convert<codecvt_byname<wchar_t, char, mbstate_t>> gbk(codecvt_gbk);
     wstring unicode = gbk.from_bytes(gbkcode);
 
+    //=============================
+    // 方式一：
     // 转换成utf8
     wstring_convert<codecvt_utf8<wchar_t>> utf8;
     string utf8code = utf8.to_bytes(unicode);
-
     // 写入utf8文件
     ofstream output("output.txt");
+    output << utf8code;
+
+    //=============================
+    // 方式二：输出gbk
+    wofstream output("output.txt");
+    // 转换成utf8
+    output.imbue(locale("zh_CN.UTF8"));
     output << utf8code;
 }
 
