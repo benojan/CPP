@@ -1,7 +1,7 @@
 /**
 * 该代码适用于windows平台下
 * Visual Studio 2019
-* C++11以上
+* C++11 以上
 */
 
 #include <iostream>
