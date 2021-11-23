@@ -1,11 +1,12 @@
-//===============================================
-//参考资料：
-http://blog.csdn.net/haiross/article/details/45074355 [C++中的locale设置（即系统区域设置）]
-http://blog.csdn.net/wallaceli1981/article/details/6116738 [C++ 标准库的 locale 类用法]
-https://gcc.gnu.org/onlinedocs/libstdc++/manual/localization.html [libstd c++ localization章节]
+# 参考资料
+- http://blog.csdn.net/haiross/article/details/45074355 [C++中的locale设置（即系统区域设置）]
+- http://blog.csdn.net/wallaceli1981/article/details/6116738 [C++ 标准库的 locale 类用法]
+- https://gcc.gnu.org/onlinedocs/libstdc++/manual/localization.html [libstd c++ localization章节]
 
-//-----------------------
+----
+
 确定一个locale,需要采用以下字符串格式：
+```c
 language[_area[.code]]
 下面列出了典型的语言名称：
 c           Default: ANSI-C conventions (English, 7 bit)
@@ -58,3 +59,4 @@ monetary                      LC_MONETARY
 none                          表示所有 category 的空集（LC_ALL 的补集）
 numeric                       LC_NUMERIC
 time                          LC_TIME
+```
