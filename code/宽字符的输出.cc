@@ -37,7 +37,7 @@ int main()
 
 /**
 * 功能：输出wstring文本到utf8文本文件。
-* 适用于：windows下，code::blocks
+* 适用于：windows下，code::blocks的g++编译器
 */
 
 #include <fstream>
@@ -45,7 +45,8 @@ using namespace std;
 
 void WriteUtf8()
 {
-    wstring utf8bytes = L"中国"; // unicode编码
+    // 源代码必须以utf8文件保存，否则提示字符出错
+    wstring utf8bytes = L"中国"; // unicode编码，或者使用L"\u4e2d\u56fd"
 
     // 将unicode编码，转换成utf8编码
     wstring_convert<codecvt_utf8<wchar_t>> conv;
@@ -65,7 +66,7 @@ int main()
 
 /**
 * 功能：打开utf8文本文件，并输出到utf8文本文件。
-* 适用于：windows下，code::blocks
+* 适用于：windows下，code::blocks的g++编译器
 */
 
 #include <fstream>
