@@ -19,6 +19,7 @@ int main()
 
 /**
 * 功能：输出wstring到utf8文本文件。
+* 适用于：windows下，visual studio 2019
 */
 
 #include <fstream>
@@ -30,4 +31,29 @@ int main()
 	wofstream out("output.txt");
 	out.imbue(locale("zh_CN.utf8"));
 	out << ws << endl;
+}
+
+//=================================================
+
+/**
+* 功能：打开utf8文本文件，并输出到utf8文本文件。
+* 适用于：windows下，code::blocks
+*/
+
+#include <fstream>
+using namespace std;
+
+void WriteUtf8()
+{
+    wifstream input("input.txt");
+    wstring utf8bytes;
+    getline(input, utf8bytes);
+
+    wofstream output("output.txt");
+    output << utf8bytes << endl;
+}
+
+int main()
+{
+    WriteUtf8();
 }
