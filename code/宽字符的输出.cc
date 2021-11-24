@@ -45,9 +45,13 @@ using namespace std;
 
 void WriteUtf8()
 {
-    wstring utf8bytes = L"中国𣍐";
+    wstring utf8bytes = L"中国"; // unicode编码
 
-    wofstream output("output.txt");
+    // 将unicode编码，转换成utf8编码
+    wstring_convert<codecvt_utf8<wchar_t>> conv;
+    string utf8bytes = conv.to_bytes(unicode);
+
+    ofstream output("output.txt");
     output << utf8bytes << endl;
 }
 
@@ -69,7 +73,7 @@ using namespace std;
 
 void WriteUtf8()
 {
-    wifstream input("input.txt");
+    wifstream input("input.txt"); // utf8编码
     wstring utf8bytes;
     getline(input, utf8bytes);
 
