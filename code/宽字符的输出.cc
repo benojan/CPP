@@ -36,6 +36,30 @@ int main()
 //=================================================
 
 /**
+* 功能：输出wstring文本到utf8文本文件。
+* 适用于：windows下，code::blocks
+*/
+
+#include <fstream>
+using namespace std;
+
+void WriteUtf8()
+{
+    wstring utf8bytes = L"中国𣍐";
+
+    wofstream output("output.txt");
+    output << utf8bytes << endl;
+}
+
+int main()
+{
+    WriteUtf8();
+    return 0;
+}
+
+//=================================================
+
+/**
 * 功能：打开utf8文本文件，并输出到utf8文本文件。
 * 适用于：windows下，code::blocks
 */
