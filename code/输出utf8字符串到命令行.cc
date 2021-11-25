@@ -8,8 +8,8 @@ using namespace std;
 
 int main()
 {
-    string unicode = "你好𣍐";
+    string u8bytes = "你好𣍐";
     system("chcp 65001");
     system("cls");
-    cout << unicode << endl;
+    cout << u8bytes << endl;
 }
