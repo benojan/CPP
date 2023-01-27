@@ -1,4 +1,5 @@
 # 参考资料
+- ⭐https://blog.csdn.net/whl0071/article/details/125677678 [c++程序编码]
 - http://blog.csdn.net/haiross/article/details/45074355 [C++中的locale设置（即系统区域设置）]
 - http://blog.csdn.net/wallaceli1981/article/details/6116738 [C++ 标准库的 locale 类用法]
 - https://gcc.gnu.org/onlinedocs/libstdc++/manual/localization.html [libstd c++ localization章节]
