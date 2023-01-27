@@ -27,6 +27,14 @@
 
 > windows下，VC默认使用UTF-16BE，wchar_t 不支持生僻字，使用普通的char就能支持utf-8。
 
+### 三、指定编译编码
+
+1. 指定编译执行内码：`-fexec-charset=GBK`
+
+2. 指定脚本文件编码：`-finput-charset=UTF-8`
+
+3. 指定编译宽字符(wchar_t)的内码：`-fwide-exec-charset=UTF-16`
+
 ----
 
 确定一个locale,需要采用以下字符串格式：
