@@ -27,6 +27,8 @@
 
 > windows下，VC默认使用UTF-16BE，wchar_t 不支持生僻字，使用普通的char就能支持utf-8。
 
+> c++新标准里新增的char32_t，在windows下并未完全实现可用。标准输入输出流无法使用。
+
 ### 三、指定编译编码
 
 1. 指定c++程序内码：`-fexec-charset=GBK`
