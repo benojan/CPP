@@ -25,9 +25,11 @@
     
 ### 二、已知的问题
 
-> windows下，VC默认使用UTF-16BE，wchar_t 不支持生僻字，使用普通的char就能支持utf-8。
+1. windows下，wchar_t的c++程序内码，VC默认使用UTF-16BE，所以wchar_t不支持生僻字。可以使用utf-8格式的char字符。
 
-> c++新标准里新增的char32_t，在windows下并未完全实现可用。标准输入输出流无法使用。
+2. linux下，wchar_t的c++程序内码，默认使用UTF-32BE，所以生僻字应该没有这样的问题。
+
+3. c++新标准里新增的char32_t，在windows下并未完全实现可用。标准输入输出流无法使用。
 
 ### 三、指定编译编码
 
