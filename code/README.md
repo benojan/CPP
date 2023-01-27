@@ -35,7 +35,7 @@
 
 3. 指定c++程序宽字符(wchar_t)内码：`-fwide-exec-charset=UTF-16`
 
-4. 指定运行环境编码：system("chcp 65001");
+4. 指定运行环境编码：`system("chcp 65001");`
 
 ----
 
